@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community &amp; Local Bands | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="Discover local blues bands, musicians, and blues venues in Kalamazoo Valley — brought to you by KVBA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+    .band-placeholder {
+      width: 100%; height: 200px; background: var(--bg-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--heading); font-size: 3rem; color: var(--blue);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html">Preserve the Blues</a></li>
+    <li><a href="bands.html" class="active">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.5), rgba(8,8,8,0.98)), url('assets/images/622866035_1333232205512903_3604724497939376705_n.jpg'); background-size: cover; background-position: center top;">
+  <div class="container">
+    <span class="section-label">Local Blues Scene</span>
+    <h1>Community &amp; <span class="blue">Local Bands</span></h1>
+    <p>Southwest Michigan is home to an incredible blues community. Meet the artists keeping the tradition alive on stages across Kalamazoo Valley.</p>
+  </div>
+</div>
+
+<!-- ─── LOCAL BANDS ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Local Scene</span>
+      <h2>Kalamazoo Valley <span class="blue">Blues Artists</span></h2>
+      <p>These artists regularly perform at KVBA events and blues jams throughout the region. Click through to find them on social media and catch them live.</p>
+    </div>
+    <div class="bands-grid reveal">
+
+      <div class="band-card">
+        <div class="band-img">
+          <img src="assets/images/sample2.jpg" alt="Tonya Martini Band" />
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Blues / Soul / R&amp;B</span>
+          <h3>Tonya Martini Band</h3>
+          <p>Powerful vocals and soulful delivery make Tonya Martini one of the most captivating performers in the Kalamazoo blues scene. A Winter Blues Series staple.</p>
+        </div>
+      </div>
+
+      <div class="band-card">
+        <div class="band-img">
+          <img src="assets/images/518357501_1176131844556274_4112542686960312458_n.jpg" alt="JR Clark Band" />
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Blues / Roots Rock</span>
+          <h3>JR Clark Band</h3>
+          <p>Sharp guitar work and tight grooves define the JR Clark Band. A regular at Winter Blues Series and KVBA events around the valley.</p>
+        </div>
+      </div>
+
+      <div class="band-card">
+        <div class="band-img">
+          <div class="band-placeholder">🎸</div>
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Blues / Rock</span>
+          <h3>Out of Favor Boys</h3>
+          <p>A beloved Kalamazoo act blending traditional blues with roots rock energy. Consistent crowd favorites at Shakespeare's and KVBA events.</p>
+        </div>
+      </div>
+
+      <div class="band-card">
+        <div class="band-img">
+          <img src="assets/images/Messenger_creation_C5F40A96-31F3-4BCE-A753-2F58A3DBD801.jpeg" alt="Jim Klein Band" />
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Delta Blues / Traditional</span>
+          <h3>Jim Klein Band</h3>
+          <p>Jim Klein hosts the beloved monthly Saturday jam at Old Dog Tavern. Steeped in Delta blues tradition, his band brings deep feel and authenticity every time.</p>
+        </div>
+      </div>
+
+      <div class="band-card">
+        <div class="band-img">
+          <div class="band-placeholder">🎵</div>
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Contemporary Blues</span>
+          <h3>Blueback</h3>
+          <p>One of Kalamazoo's most exciting bands, Blueback recently celebrated a CD release at Crawlspace Theater. Contemporary blues with serious chops.</p>
+        </div>
+      </div>
+
+      <div class="band-card">
+        <div class="band-img">
+          <img src="assets/images/Messenger_creation_3E051B6E-1FED-45DF-B938-CCC9328BC4F0.jpeg" alt="The Cats" />
+        </div>
+        <div class="band-info">
+          <span class="band-genre">Blues / Chicago Style</span>
+          <h3>The Cats</h3>
+          <p>The Cats host the legendary Wednesday blues jam at Shakespeare's Lower Level. The beating heart of the Kalamazoo open-jam tradition.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Add your band CTA -->
+    <div class="text-center mt-3 reveal" style="background:var(--bg-3); border:1px solid var(--border); border-radius:var(--radius); padding:3rem 2rem;">
+      <span class="section-label">Are you a local blues artist?</span>
+      <h2 style="font-size:2rem; margin-bottom:0.75rem;">Get Listed on <span class="blue">KVBA</span></h2>
+      <p style="color:var(--light); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto;">KVBA supports the entire local blues community. If you're a blues musician or band based in Southwest Michigan, we'd love to feature you here.</p>
+      <a href="mailto:info@kvba.org?subject=Band Listing Request" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BLUES VENUES ─────────────────────────────────────────────── -->
+<section class="venues-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Where to Find the Blues</span>
+      <h2>Local <span class="blue">Blues Venues</span></h2>
+      <p>These Kalamazoo-area venues support live blues and regularly host KVBA events and jams.</p>
+    </div>
+    <div class="venues-grid reveal">
+
+      <div class="venue-card">
+        <h3>Shakespeare's Pub</h3>
+        <p>241 E Kalamazoo Ave, Kalamazoo<br>Home of the Wednesday night blues jam w/ The Cats. Upper and lower level stages.</p>
+      </div>
+
+      <div class="venue-card">
+        <h3>Old Dog Tavern</h3>
+        <p>108 E Michigan Ave, Kalamazoo<br>Monthly Saturday blues jams hosted by Jim Klein Band. Great neighborhood bar with a rich blues history.</p>
+      </div>
+
+      <div class="venue-card">
+        <h3>Crawlspace Theater</h3>
+        <p>Kalamazoo, MI<br>Intimate theater venue hosting album release events and special blues performances.</p>
+      </div>
+
+      <div class="venue-card">
+        <h3>Bronson Park / Arcadia Creek</h3>
+        <p>Downtown Kalamazoo<br>Outdoor home of the annual Kalamazoo Blues Festival. One of the most vibrant outdoor music venues in Southwest Michigan.</p>
+      </div>
+
+      <div class="venue-card">
+        <h3>Your Venue Here</h3>
+        <p>Do you host live blues? KVBA partners with local venues to promote and grow the blues scene. <a href="mailto:info@kvba.org?subject=Venue Partnership" style="color:var(--blue);">Get in touch.</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive in Southwest Michigan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="bands.html">Local Bands</a></li>
+          <li><a href="bands.html#venues">Blues Venues</a></li>
+          <li><a href="mailto:info@kvba.org?subject=Band Listing Request">List Your Band</a></li>
+          <li><a href="mailto:info@kvba.org?subject=Venue Partnership">Venue Partnership</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

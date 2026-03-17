@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalamazoo Valley Blues Association | Keeping the Blues Alive</title>
+  <meta name="description" content="The Kalamazoo Valley Blues Association promotes, preserves, and celebrates blues music in Southwest Michigan. Join us for live events, festivals, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html">Preserve the Blues</a></li>
+    <li><a href="bands.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <video autoplay muted loop playsinline id="heroVideo">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="hero-pick-logo" />
+    <h1>KEEPING THE <span class="blue">BLUES</span> ALIVE</h1>
+    <p class="hero-subtitle">KALAMAZOO VALLEY BLUES ASSOCIATION</p>
+    <div class="hero-ctas">
+      <a href="events.html" class="btn btn-primary">Upcoming Events</a>
+      <a href="membership.html" class="btn btn-outline">Become a Member</a>
+    </div>
+  </div>
+  <div class="hero-scroll" title="Scroll down">↓</div>
+</section>
+
+<!-- ─── UPCOMING EVENTS PREVIEW ─────────────────────────────────────────────── -->
+<section id="events-preview">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Coming Up</span>
+      <h2>Upcoming <span class="blue">Events</span></h2>
+      <p>Blues jams, festivals, and live performances happening around Kalamazoo Valley.</p>
+    </div>
+    <div class="events-grid reveal">
+      <div class="event-card">
+        <div class="event-date"><span class="day">17</span><span class="month">MAR</span></div>
+        <div class="event-info">
+          <h3>Out of Favor Boys</h3>
+          <div class="event-meta">
+            <span class="time">⏱ 5:00 PM</span>
+            <span class="venue">📍 Shakespeare's</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span class="day">19</span><span class="month">MAR</span></div>
+        <div class="event-info">
+          <h3>Blues Jam w/ The Cats</h3>
+          <div class="event-meta">
+            <span class="time">⏱ 6–9 PM</span>
+            <span class="venue">📍 Shakespeare's Lower Level</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span class="day">22</span><span class="month">MAR</span></div>
+        <div class="event-info">
+          <h3>Blues Jam w/ Jim Klein Band</h3>
+          <div class="event-meta">
+            <span class="time">⏱ 6:00 PM</span>
+            <span class="venue">📍 Old Dog Tavern</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date"><span class="day">26</span><span class="month">MAR</span></div>
+        <div class="event-info">
+          <h3>Blueback CD Release</h3>
+          <div class="event-meta">
+            <span class="time">⏱ 7:30 PM</span>
+            <span class="venue">📍 Crawlspace Theater</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="events-cta reveal">
+      <a href="events.html" class="btn btn-blue-outline">View All Events &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PHOTO GALLERY ─────────────────────────────────────────────── -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Blues Community</span>
+      <h2>Life in the <span class="blue">Blues</span></h2>
+    </div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="assets/images/622866035_1333232205512903_3604724497939376705_n.jpg" alt="Live blues performance" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/Messenger_creation_CA2ED29F-C7D2-44B9-A4A9-341E85EB263A.jpeg" alt="Blues festival crowd" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/558158569_1234571758712282_2923290320600374103_n.jpg" alt="KVBA volunteers" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/Messenger_creation_6397FDA3-764A-424F-9161-4D61D6BF4950.jpeg" alt="Blues musician" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/518357501_1176131844556274_4112542686960312458_n.jpg" alt="Blues performance" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/519391449_1176131861222939_837188154339662566_n.jpg" alt="Blues event" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/521945544_1176131881222937_8166789073428146277_n.jpg" alt="Blues community" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/540386653_1210858391083619_7931976593139981460_n.jpg" alt="Blues show" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/558804230_1241107868058671_965261973735089613_n.jpg" alt="Blues musician on stage" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/Messenger_creation_3E051B6E-1FED-45DF-B938-CCC9328BC4F0.jpeg" alt="Blues performance" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/Messenger_creation_4C94798D-7E67-408C-A347-3D10B8976B68.jpeg" alt="Blues artist" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/Messenger_creation_5CD87675-F2B4-4029-9389-1ED178D87CBF.jpeg" alt="Live blues" loading="lazy" />
+      <div class="gallery-overlay"></div>
+    </div>
+  </div>
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button class="lb-close" title="Close">✕</button>
+    <button class="lb-nav lb-prev" title="Previous">‹</button>
+    <img id="lightboxImg" src="" alt="Gallery image" />
+    <button class="lb-nav lb-next" title="Next">›</button>
+  </div>
+</section>
+
+<!-- ─── MEMBERSHIP CTA ─────────────────────────────────────────────── -->
+<section id="membership-cta">
+  <div class="container">
+    <div class="membership-cta-inner reveal">
+      <span class="section-label">Support the Blues</span>
+      <h2>Become a <span class="blue">Member</span></h2>
+      <p>Your membership keeps the blues alive in Southwest Michigan. Join a community of fans, musicians, and supporters dedicated to this great American art form.</p>
+      <a href="membership.html" class="btn btn-primary">Join KVBA Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT TEASER ─────────────────────────────────────────────── -->
+<section id="about-teaser">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="section-label">Who We Are</span>
+        <h2>The <span class="blue">Heart</span> of the Blues in Kalamazoo</h2>
+        <p>The Kalamazoo Valley Blues Association has been the heartbeat of blues music in Southwest Michigan for decades. We're a community of musicians, fans, and supporters united by our love of the blues.</p>
+        <p>From intimate jams at local bars to the annual Kalamazoo Blues Festival, KVBA connects the community to the music that moves us. We also invest in the future through our Blues in Schools education program and the Boogie Woogie Bob Peters Scholarship.</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-number">30+</span><span class="stat-label">Years Strong</span></div>
+          <div class="stat"><span class="stat-number">100+</span><span class="stat-label">Events per Year</span></div>
+          <div class="stat"><span class="stat-number">500+</span><span class="stat-label">Members</span></div>
+          <div class="stat"><span class="stat-number">50+</span><span class="stat-label">Local Bands</span></div>
+        </div>
+        <a href="about.html" class="btn btn-blue-outline mt-3">Learn More About KVBA</a>
+      </div>
+      <div class="about-img-wrap reveal">
+        <img src="assets/images/Messenger_creation_CA2ED29F-C7D2-44B9-A4A9-341E85EB263A.jpeg" alt="Blues festival at Bronson Park" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive since the 1990s.<br>Southwest Michigan's home for the blues.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="membership.html">Join KVBA</a></li>
+          <li><a href="preserve.html#scholarship">Scholarship</a></li>
+          <li><a href="preserve.html#schools">Blues in Schools</a></li>
+          <li><a href="about.html#board">Board of Directors</a></li>
+          <li><a href="about.html#nonprofit">Nonprofit Info</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+          <li><a href="https://kvba.org" target="_blank" rel="noopener">kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="Learn about the Kalamazoo Valley Blues Association — our mission, history, board of directors, and commitment to keeping the blues alive." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+    .memorial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+    .memorial-card {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem; text-align: center;
+    }
+    .memorial-card .name { font-family: var(--heading); font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .memorial-card .years { color: var(--blue); font-size: 0.82rem; letter-spacing: 0.1em; }
+    .memorial-card .note { color: var(--gray); font-size: 0.85rem; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html">Preserve the Blues</a></li>
+    <li><a href="bands.html">Community</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.55), rgba(8,8,8,0.98)), url('assets/images/Messenger_creation_CA2ED29F-C7D2-44B9-A4A9-341E85EB263A.jpeg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <span class="section-label">Our Story</span>
+    <h1>About <span class="blue">KVBA</span></h1>
+    <p>The Kalamazoo Valley Blues Association — a community, a mission, and a love for the blues.</p>
+  </div>
+</div>
+
+<!-- ─── MISSION ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="mission-block reveal">
+      <div class="mission-quote">"Keeping the Blues Alive"</div>
+      <p>The Kalamazoo Valley Blues Association is dedicated to promoting, preserving, and celebrating blues music and its cultural heritage in Southwest Michigan. We connect musicians, fans, venues, and communities in a shared passion for this foundational American art form.</p>
+    </div>
+
+    <!-- ─── HISTORY ─────────────────────────────────────────────── -->
+    <div class="history-grid reveal">
+      <div class="history-text">
+        <span class="section-label">Our Story</span>
+        <h2>More Than <span class="blue">30 Years</span> of the Blues</h2>
+        <p>The Kalamazoo Valley Blues Association was founded in the early 1990s by a dedicated group of blues fans and musicians who wanted to ensure that Southwest Michigan would always have a thriving blues scene.</p>
+        <p>What started as a small gathering of enthusiasts has grown into one of Michigan's most active blues organizations — hosting hundreds of events each year, running education programs in local schools, and producing the annual Kalamazoo Blues Festival.</p>
+        <p>Through the decades, KVBA has navigated changing musical landscapes while staying true to the authentic heart of the blues. We've seen legends perform on our stages, watched young scholarship recipients go on to music careers, and built a community that keeps growing.</p>
+        <p>Today, KVBA is a 501(c)(3) nonprofit organization led by a volunteer board of directors, supported by hundreds of members, and powered by countless volunteers who show up because they love the music.</p>
+      </div>
+      <div class="history-img">
+        <img src="assets/images/558158569_1234571758712282_2923290320600374103_n.jpg" alt="KVBA members at Blues Festival" />
+      </div>
+    </div>
+
+    <!-- ─── BOARD ─────────────────────────────────────────────── -->
+    <div id="board">
+      <div class="section-header reveal">
+        <span class="section-label">Leadership</span>
+        <h2>Board of <span class="blue">Directors</span></h2>
+        <p>KVBA is governed by a volunteer board of dedicated blues community members. <a href="mailto:info@kvba.org" style="color:var(--blue);">Contact us</a> to learn about board opportunities.</p>
+      </div>
+      <div class="board-grid reveal">
+        <div class="board-card">
+          <div class="board-avatar">P</div>
+          <div class="name">President</div>
+          <div class="role">Board President</div>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar">VP</div>
+          <div class="name">Vice President</div>
+          <div class="role">Board Vice President</div>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar">S</div>
+          <div class="name">Secretary</div>
+          <div class="role">Board Secretary</div>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar">T</div>
+          <div class="name">Treasurer</div>
+          <div class="role">Board Treasurer</div>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar">D</div>
+          <div class="name">Director at Large</div>
+          <div class="role">Director</div>
+        </div>
+        <div class="board-card">
+          <div class="board-avatar">D</div>
+          <div class="name">Director at Large</div>
+          <div class="role">Director</div>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--gray); margin-top:1.5rem; font-size:0.9rem;">
+        Board listings will be updated with current member names. <a href="mailto:info@kvba.org" style="color:var(--blue);">Contact KVBA</a> to update board information.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NONPROFIT INFO ─────────────────────────────────────────────── -->
+<section id="nonprofit" style="background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;" class="reveal">
+      <div>
+        <span class="section-label">Our Nonprofit Status</span>
+        <h2>501(c)(3) <span class="blue">Organization</span></h2>
+        <p style="color:var(--light); margin-bottom:1rem;">KVBA is a registered 501(c)(3) nonprofit organization, which means your membership dues and donations may be tax-deductible. We are governed by a volunteer board and operate entirely in service of the blues community.</p>
+        <p style="color:var(--light); margin-bottom:1.5rem;">We welcome contributions of all kinds — financial support, in-kind donations, volunteer time, and sponsorships all make a meaningful difference in our ability to serve the community.</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="membership.html" class="btn btn-primary">Join or Donate</a>
+          <a href="mailto:info@kvba.org?subject=Sponsorship Inquiry" class="btn btn-outline">Sponsorship Info</a>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+        <div class="stat">
+          <span class="stat-number">501(c)(3)</span>
+          <span class="stat-label">Nonprofit Status</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Volunteer Board</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">1990s</span>
+          <span class="stat-label">Founded</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">MI</span>
+          <span class="stat-label">State of Incorporation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── IN MEMORIAM ─────────────────────────────────────────────── -->
+<section id="memoriam">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">In Memoriam</span>
+      <h2>Those Who <span class="blue">Shaped Our Blues</span></h2>
+      <p>We honor the musicians and community members who contributed so much to the Kalamazoo blues tradition. Their music lives on.</p>
+    </div>
+    <div class="memorial-grid reveal">
+      <div class="memorial-card">
+        <div class="name">Boogie Woogie Bob Peters</div>
+        <div class="years">In Memoriam</div>
+        <div class="note">Beloved blues pianist and mentor. The scholarship bearing his name honors his legacy every year.</div>
+      </div>
+      <div class="memorial-card">
+        <div class="name">Beloved Community Member</div>
+        <div class="years">In Memoriam</div>
+        <div class="note">This page honors members of our blues family no longer with us. Contact KVBA to add a tribute.</div>
+      </div>
+    </div>
+    <p style="text-align:center; color:var(--gray); margin-top:2rem; font-size:0.9rem;">
+      To add a tribute to a musician or community member, please <a href="mailto:info@kvba.org?subject=In Memoriam" style="color:var(--blue);">contact us</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive in Southwest Michigan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html#board">Board of Directors</a></li>
+          <li><a href="about.html#nonprofit">Nonprofit Info</a></li>
+          <li><a href="about.html#memoriam">In Memoriam</a></li>
+          <li><a href="mailto:info@kvba.org?subject=Sponsorship Inquiry">Sponsorships</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preserve the Blues | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="KVBA's mission to preserve and promote blues music through education, scholarships, and community programs in Southwest Michigan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+    .pullquote {
+      font-family: var(--heading); font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      color: var(--blue); border-left: 4px solid var(--blue);
+      padding-left: 2rem; margin: 2.5rem 0;
+    }
+    .scholarship-block {
+      background: linear-gradient(135deg, #0a1520 0%, var(--bg-3) 100%);
+      border: 1px solid rgba(28,200,232,0.3); border-radius: var(--radius);
+      padding: 3.5rem; margin-top: 5rem;
+    }
+    .scholarship-block h2 { margin-bottom: 1.25rem; }
+    .scholarship-block p  { color: var(--light); margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html" class="active">Preserve the Blues</a></li>
+    <li><a href="bands.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.55), rgba(8,8,8,0.98)), url('assets/images/received_749088378077921.jpeg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <span class="section-label">Our Mission</span>
+    <h1>Preserve the <span class="blue">Blues</span></h1>
+    <p>The blues is more than music — it's the foundation of American culture. We're committed to keeping it alive and growing for future generations.</p>
+  </div>
+</div>
+
+<!-- ─── INTRO ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="preserve-intro reveal">
+      <img src="assets/images/Messenger_creation_CA2ED29F-C7D2-44B9-A4A9-341E85EB263A.jpeg" alt="Blues performance at outdoor venue" />
+      <div class="preserve-intro-text">
+        <span class="section-label">Why It Matters</span>
+        <h2>The Blues Is <span class="blue">American Heritage</span></h2>
+        <p>Born from the African American experience in the Deep South, the blues gave rise to rock and roll, soul, R&amp;B, and jazz. Without the blues, American music as we know it simply doesn't exist.</p>
+        <p>Yet blues music — particularly authentic, roots-based blues — faces real threats from changing radio formats, shrinking venues, and generational gaps in awareness. That's where KVBA steps in.</p>
+        <div class="pullquote">
+          "The blues was here before you were born, and it'll be here when you're gone."
+        </div>
+        <p>Through education, performance, scholarship, and community-building, KVBA ensures the next generation of Kalamazoo Valley residents grows up knowing, loving, and playing the blues.</p>
+      </div>
+    </div>
+
+    <!-- ─── PROGRAMS ─────────────────────────────────────────────── -->
+    <div class="section-header reveal">
+      <span class="section-label">What We Do</span>
+      <h2>Our <span class="blue">Programs</span></h2>
+    </div>
+    <div class="programs-grid reveal">
+
+      <div class="program-card" id="schools">
+        <div class="program-icon">🏫</div>
+        <h3>Blues in Schools</h3>
+        <p>KVBA partners with local schools to bring professional blues musicians into classrooms. Students learn about the history of the blues, its African American roots, and how to play basic blues structures. Our Blues in Schools program has reached thousands of students across Kalamazoo County.</p>
+      </div>
+
+      <div class="program-card" id="scholarship">
+        <div class="program-icon">🏆</div>
+        <h3>Boogie Woogie Bob Peters Scholarship</h3>
+        <p>Named in honor of beloved Kalamazoo blues pianist Bob Peters, this annual scholarship supports young musicians pursuing blues music through higher education or dedicated study. Applications open each spring — see our annual events for details.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🎙️</div>
+        <h3>Blues Jams &amp; Open Stages</h3>
+        <p>Our weekly and monthly blues jams give emerging and established musicians a stage. These open sessions are the lifeblood of the local blues scene — a place where legends and newcomers share the same spotlight.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🎪</div>
+        <h3>Kalamazoo Blues Festival</h3>
+        <p>Our annual outdoor festival brings regional and national blues talent to the streets of Kalamazoo. The Blues Fest is free and open to the community — a celebration of everything KVBA stands for.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">⛳</div>
+        <h3>Birdies, Bogeys &amp; Blues</h3>
+        <p>Our annual charity golf outing raises funds for KVBA's education and scholarship programs. A fun day on the links for blues fans and golfers alike, with live music throughout the event.</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🤝</div>
+        <h3>Community Partnerships</h3>
+        <p>KVBA works with local venues, businesses, schools, and community organizations to weave blues music deeper into the fabric of Southwest Michigan life. We actively seek new partners who share our passion.</p>
+      </div>
+
+    </div>
+
+    <!-- ─── SCHOLARSHIP DETAIL ─────────────────────────────────────────────── -->
+    <div class="scholarship-block reveal">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div>
+          <span class="section-label">In Honor Of</span>
+          <h2>Boogie Woogie<br><span class="blue">Bob Peters</span></h2>
+          <p>Bob Peters was a fixture of the Kalamazoo blues scene for decades — a gifted pianist, generous mentor, and tireless champion of the blues. The Boogie Woogie Bob Peters Scholarship carries his spirit forward by investing in the next generation of blues musicians.</p>
+          <p>Each year, KVBA awards scholarship funds to a young musician demonstrating exceptional talent, dedication to the blues tradition, and community involvement.</p>
+          <a href="mailto:info@kvba.org?subject=Scholarship Inquiry" class="btn btn-primary mt-2">Scholarship Inquiry</a>
+        </div>
+        <div style="text-align:center;">
+          <div style="background:var(--bg); border:2px solid rgba(28,200,232,0.3); border-radius:var(--radius); padding:3rem 2rem;">
+            <div style="font-family:var(--heading); font-size:4rem; color:var(--blue); line-height:1;">🎹</div>
+            <div style="font-family:var(--heading); font-size:1.6rem; margin-top:1rem;">Annual Award</div>
+            <div style="color:var(--light); font-size:0.9rem; margin-top:0.5rem;">Applications open each spring.<br>Contact KVBA for details.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── JOIN CTA ─────────────────────────────────────────────── -->
+<section style="background:var(--bg-2); border-top:1px solid var(--border); text-align:center;">
+  <div class="container">
+    <div class="reveal" style="max-width:600px; margin:0 auto;">
+      <span class="section-label">Get Involved</span>
+      <h2>Help Us <span class="blue">Preserve</span> the Blues</h2>
+      <p style="color:var(--light); margin-bottom:2rem;">Your KVBA membership directly funds Blues in Schools, the scholarship fund, and our community events. Every dollar keeps the tradition alive.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="membership.html" class="btn btn-primary">Become a Member</a>
+        <a href="mailto:info@kvba.org?subject=Volunteer" class="btn btn-outline">Volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive in Southwest Michigan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="preserve.html#schools">Blues in Schools</a></li>
+          <li><a href="preserve.html#scholarship">Scholarship</a></li>
+          <li><a href="events.html">Blues Fest</a></li>
+          <li><a href="membership.html">Join KVBA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
