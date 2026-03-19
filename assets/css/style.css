@@ -388,8 +388,21 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
   --blue:      #0881a0;
   --blue-dark: #0e7490;
   --blue-glow: rgba(8, 145, 178, 0.10);
-  background:  linear-gradient(180deg, #e5e0d8 0%, #d8d3cb 100%);
+  /* Isolated section: fade in from dark at top AND fade out to dark at bottom */
+  background:  linear-gradient(180deg, #080808 0%, #e5e0d8 11%, #d8d3cb 89%, #080808 100%);
   color:       var(--white); /* explicit so children inherit dark text */
+}
+/* Section immediately following another light section: no fade-in at top */
+.section-light + .section-light {
+  background: linear-gradient(180deg, #e5e0d8 0%, #d8d3cb 89%, #080808 100%);
+}
+/* Section immediately preceding another light section: no fade-out at bottom */
+.section-light:has(+ .section-light) {
+  background: linear-gradient(180deg, #080808 0%, #e5e0d8 11%, #d8d3cb 100%);
+}
+/* Middle section sandwiched between two light sections: no fades at all */
+.section-light + .section-light:has(+ .section-light) {
+  background: linear-gradient(180deg, #e5e0d8 0%, #d8d3cb 100%);
 }
 /* Elements with hardcoded dark backgrounds stay readable inside light sections */
 .section-light .award-callout,
