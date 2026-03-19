@@ -13,6 +13,49 @@
     /* Reveal animation */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Hero slideshow ── */
+    .hero-slide {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 1.2s ease; z-index: 0;
+      background-size: cover; background-position: center;
+    }
+    .hero-slide.active { opacity: 1; z-index: 1; }
+
+    /* Slide 1 video fills its slide */
+    .hero-slide #heroVideo {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; filter: brightness(0.55);
+    }
+
+    /* Per-slide overlay (re-declare so it sits above bg images) */
+    .hero-slide .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(8,8,8,0.05) 0%, rgba(8,8,8,0.25) 40%, rgba(8,8,8,0.78) 100%);
+    }
+
+    /* Small eyebrow label used on slides 2 & 3 */
+    .hero-slide-label {
+      display: block; font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem; letter-spacing: 0.35em;
+      color: #1cc8e8; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+
+    /* Dot indicators */
+    .hero-dots {
+      position: absolute; bottom: 4.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 10; display: flex; gap: 0.8rem; align-items: center;
+    }
+    .hero-dot {
+      width: 10px; height: 10px; border-radius: 50%; padding: 0; cursor: pointer;
+      background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.45);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .hero-dot.active {
+      background: #1cc8e8; border-color: #1cc8e8; transform: scale(1.3);
+    }
   </style>
 </head>
 <body>
@@ -40,19 +83,59 @@
 
 <!-- ─── HERO ─────────────────────────────────────────────── -->
 <section id="hero">
-  <video autoplay muted loop playsinline id="heroVideo">
-    <source src="assets/video/hero.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="hero-pick-logo" />
-    <h1>DISCOVER THE <span class="blue">BLUES</span></h1>
-    <p class="hero-subtitle">KALAMAZOO VALLEY BLUES ASSOCIATION</p>
-    <div class="hero-ctas">
-      <a href="events.html" class="btn btn-primary">Upcoming Events</a>
-      <a href="membership.html" class="btn btn-outline">Become a Member</a>
+
+  <!-- ── Slide 1: Main brand ── -->
+  <div class="hero-slide active">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="hero-pick-logo" />
+      <h1>DISCOVER THE <span class="blue">BLUES</span></h1>
+      <p class="hero-subtitle">KALAMAZOO VALLEY BLUES ASSOCIATION</p>
+      <div class="hero-ctas">
+        <a href="events.html" class="btn btn-primary">Upcoming Events</a>
+        <a href="membership.html" class="btn btn-outline">Become a Member</a>
+      </div>
     </div>
   </div>
+
+  <!-- ── Slide 2: Golf Outing ── -->
+  <div class="hero-slide" style="background-image:url('Images/487296823_1085717473597712_3491643075084441612_n.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-slide-label">Annual Charity Event &nbsp;·&nbsp; June 5, 2026</span>
+      <h1>BIRDIES, BOGEYS <span class="blue">&amp; BLUES</span></h1>
+      <p class="hero-subtitle">HERITAGE GLEN GOLF CLUB &nbsp;·&nbsp; PAW PAW, MI</p>
+      <div class="hero-ctas">
+        <a href="golf.html#registration" class="btn btn-primary">Register Now</a>
+        <a href="golf.html" class="btn btn-outline">Event Details</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 3: Member Bands ── -->
+  <div class="hero-slide" style="background-image:url('assets/images/622866035_1333232205512903_3604724497939376705_n.jpg'); background-position: center top;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-slide-label">Southwest Michigan Blues Community</span>
+      <h1>THE LOCAL <span class="blue">BLUES</span> SCENE</h1>
+      <p class="hero-subtitle">MEET THE KVBA MEMBER BANDS</p>
+      <div class="hero-ctas">
+        <a href="bands.html" class="btn btn-primary">See Member Bands</a>
+        <a href="membership.html" class="btn btn-outline">Join as a Band</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Dot indicators ── -->
+  <div class="hero-dots">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+    <button class="hero-dot" aria-label="Slide 3"></button>
+  </div>
+
   <div class="hero-scroll" title="Scroll down">↓</div>
 </section>
 

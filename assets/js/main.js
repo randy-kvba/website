@@ -25,6 +25,35 @@ document.querySelector('.hero-scroll')?.addEventListener('click', () => {
   next?.scrollIntoView({ behavior: 'smooth' });
 });
 
+// ─── HERO SLIDESHOW ───────────────────────────────────────────────
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots   = document.querySelectorAll('.hero-dot');
+let heroIdx   = 0;
+let heroTimer = null;
+
+function goToHeroSlide(idx) {
+  heroSlides[heroIdx].classList.remove('active');
+  heroDots[heroIdx]?.classList.remove('active');
+  heroIdx = (idx + heroSlides.length) % heroSlides.length;
+  heroSlides[heroIdx].classList.add('active');
+  heroDots[heroIdx]?.classList.add('active');
+}
+
+function startHeroTimer() { heroTimer = setInterval(() => goToHeroSlide(heroIdx + 1), 5000); }
+function stopHeroTimer()  { clearInterval(heroTimer); heroTimer = null; }
+
+if (heroSlides.length > 1) {
+  startHeroTimer();
+  // Pause rotation while user hovers over the hero
+  const heroEl = document.getElementById('hero');
+  heroEl?.addEventListener('mouseenter', stopHeroTimer);
+  heroEl?.addEventListener('mouseleave', startHeroTimer);
+  // Dot clicks jump to that slide and reset the timer
+  heroDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { stopHeroTimer(); goToHeroSlide(i); startHeroTimer(); });
+  });
+}
+
 // ─── ACTIVE NAV LINK ───────────────────────────────────────────────
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
