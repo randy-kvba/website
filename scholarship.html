@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boogie Woogie Bob Peters Scholarship | KVBA</title>
+  <meta name="description" content="The Boogie Woogie Bob Peters Scholarship awards $1,500 annually to a graduating Southwest Michigan senior who has been active in music programs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+
+    /* ── Legacy pull quote ── */
+    .legacy-quote {
+      font-family: var(--heading);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--blue); line-height: 1.2;
+      border-left: 4px solid var(--blue);
+      padding: 1.25rem 0 1.25rem 2rem;
+      margin: 2rem 0;
+    }
+
+    /* ── Award amount callout ── */
+    .award-callout {
+      background: linear-gradient(135deg, #061018 0%, #0a1f2e 100%);
+      border: 1px solid rgba(28,200,232,0.4);
+      border-radius: var(--radius);
+      padding: 2.5rem; text-align: center;
+    }
+    .award-amount {
+      font-family: var(--heading); font-size: 5rem;
+      color: var(--blue); line-height: 1; display: block;
+    }
+    .award-label {
+      font-family: var(--heading); font-size: 1rem;
+      letter-spacing: 0.3em; color: var(--light);
+      text-transform: uppercase; display: block;
+      margin-top: 0.25rem;
+    }
+
+    /* ── Requirement items ── */
+    .req-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+    .req-item {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      transition: border-color var(--ease);
+    }
+    .req-item:hover { border-color: rgba(28,200,232,0.3); }
+    .req-num {
+      font-family: var(--heading); font-size: 1.8rem; color: var(--blue);
+      line-height: 1; flex-shrink: 0; min-width: 2rem; padding-top: 2px;
+    }
+    .req-text { color: var(--light); font-size: 0.95rem; line-height: 1.65; }
+    .req-text strong { color: var(--white); display: block; margin-bottom: 0.25rem; font-size: 1rem; }
+
+    /* ── Deadline strip ── */
+    .deadline-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .deadline-item {
+      background: var(--bg-3); padding: 1.75rem; text-align: center;
+    }
+    .deadline-item .d-icon { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
+    .deadline-item .d-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray); display: block; margin-bottom: 0.3rem; }
+    .deadline-item .d-value { font-family: var(--heading); font-size: 1.25rem; color: var(--white); display: block; line-height: 1.1; }
+    .deadline-item .d-value.blue { color: var(--blue); }
+    @media (max-width: 640px) {
+      .deadline-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Bob Peters legacy section ── */
+    .legacy-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    @media (max-width: 860px) {
+      .legacy-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      display: flex; align-items: flex-start; gap: 1.25rem;
+    }
+    .contact-icon { font-size: 2rem; flex-shrink: 0; }
+    .contact-card h4 { font-family: var(--heading); font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .contact-card p { color: var(--light); font-size: 0.9rem; }
+    .contact-card a { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html" class="active">Preserve the Blues</a></li>
+    <li><a href="bands.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="golf.html">Golf Outing</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.55), rgba(8,8,8,0.98)), url('assets/images/received_749088378077921.jpeg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <span class="section-label">KVBA Education Fund</span>
+    <h1>"Boogie Woogie" Bob Peters <span class="blue">Scholarship</span></h1>
+    <p>An annual $1,500 award honoring the legacy of a beloved Kalamazoo blues legend — and investing in the next generation of musicians.</p>
+  </div>
+</div>
+
+<!-- ─── ABOUT BOB ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="legacy-grid reveal">
+      <div>
+        <span class="section-label">In His Memory</span>
+        <h2>The Legacy of <span class="blue">"Boogie Woogie" Bob Peters</span></h2>
+        <p style="color:var(--light); margin-bottom:1rem;">Bob Peters was a fixture on the Kalamazoo music landscape for decades — a gifted pianist, guitar player, and music historian who was beloved throughout the Southwest Michigan blues community.</p>
+        <p style="color:var(--light); margin-bottom:1rem;">A multi-talented artist and tireless champion of the blues, Peters left behind a legacy of music, art, and deep relationships that his family, friends, and loyal fans strive to keep alive. He passed away suddenly on March 13, 2010.</p>
+        <p style="color:var(--light); margin-bottom:1rem;">In 2013, the KVBA and the Peters Family joined forces to create a scholarship fund dedicated to his memory and musical legacy. A vision of keeping that passion alive and passing it along to future generations became the mission of the fund.</p>
+        <div class="legacy-quote">
+          "Keeping the legacy and passion alive and passing it along for future generations."
+        </div>
+        <p style="color:var(--gray); font-size:0.9rem; font-style:italic;">— The Peters Family and KVBA Board of Directors</p>
+      </div>
+      <div>
+        <div class="award-callout">
+          <span class="award-amount">$1,500</span>
+          <span class="award-label">Annual Scholarship Award</span>
+          <div style="height:1px; background:var(--border); margin:1.75rem 0;"></div>
+          <p style="color:var(--light); font-size:0.9rem; margin-bottom:0;">Sponsored by the Bob Peters Family and the Kalamazoo Valley Blues Association. Awarded each year to a graduating senior from a Southwest Michigan school who demonstrates excellence in music and academics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ELIGIBILITY ─────────────────────────────────────────────── -->
+<section style="background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Who Can Apply</span>
+      <h2>Eligibility &amp; <span class="blue">Requirements</span></h2>
+      <p>This scholarship is open to graduating seniors who have been active in music programs throughout their high school career.</p>
+    </div>
+
+    <ul class="req-list reveal">
+      <li class="req-item">
+        <span class="req-num">1</span>
+        <div class="req-text">
+          <strong>Active in Music</strong>
+          Must have been active in a music program — vocal or instrumental — during their high school career, and in the community.
+        </div>
+      </li>
+      <li class="req-item">
+        <span class="req-num">2</span>
+        <div class="req-text">
+          <strong>College / University Acceptance</strong>
+          Must have been accepted to a college or university. Proof of program acceptance in the form of an official signature will be required.
+        </div>
+      </li>
+      <li class="req-item">
+        <span class="req-num">3</span>
+        <div class="req-text">
+          <strong>Essay or Video Submission</strong>
+          Write a 2-page, double-spaced essay <em>or</em> submit a 3–5 minute video on the topic: <em>"What Contributions has Blues Music Made to Our American Culture?"</em> Be sure to footnote your sources.
+        </div>
+      </li>
+      <li class="req-item">
+        <span class="req-num">4</span>
+        <div class="req-text">
+          <strong>Music Involvement &amp; Depth</strong>
+          In addition to the essay or video, emphasis will be placed on the number of years a student has been in music classes and extra musical endeavors — musicals, special ensembles, music outside of school, etc.
+        </div>
+      </li>
+      <li class="req-item">
+        <span class="req-num">5</span>
+        <div class="req-text">
+          <strong>Southwest Michigan School</strong>
+          Qualified candidates must be students of a Southwest Michigan high school.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── TIMELINE ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Important Dates</span>
+      <h2>Application <span class="blue">Timeline</span></h2>
+    </div>
+    <div class="deadline-grid reveal">
+      <div class="deadline-item">
+        <span class="d-icon">📋</span>
+        <span class="d-label">Applications Due</span>
+        <span class="d-value blue">June 28</span>
+      </div>
+      <div class="deadline-item">
+        <span class="d-icon">📬</span>
+        <span class="d-label">Winner Notified</span>
+        <span class="d-value">July 10</span>
+      </div>
+      <div class="deadline-item">
+        <span class="d-icon">🎶</span>
+        <span class="d-label">Announced At</span>
+        <span class="d-value">Kalamazoo Blues Festival<br><span style="font-size:0.9rem; color:var(--gray);">July 19</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPLY ─────────────────────────────────────────────── -->
+<section style="background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Ready to Apply?</span>
+      <h2>Submit Your <span class="blue">Application</span></h2>
+      <p>Click below to access the application form. Questions? Reach out to Lisa Chilton directly.</p>
+    </div>
+
+    <div class="reveal" style="display:flex; flex-direction:column; align-items:center; gap:2rem;">
+
+      <a href="https://kvba.org/2024-boogiewoogiebobpeters-scholarship/" target="_blank" rel="noopener"
+         class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;">
+        Apply for the Scholarship
+      </a>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; width:100%; max-width:640px;">
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Questions?</h4>
+            <p>Contact Lisa Chilton at<br><a href="mailto:lisa@kvba.org">lisa@kvba.org</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Sincerely,</h4>
+            <p>The Peters Family and<br>KVBA Board of Directors</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="color:var(--gray); font-size:0.85rem; text-align:center; max-width:480px;">
+        <strong style="color:var(--white);">NOTE:</strong> Qualified candidates must be students of a Southwest Michigan school.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SUPPORT CTA ─────────────────────────────────────────────── -->
+<section style="text-align:center;">
+  <div class="container">
+    <div class="reveal" style="max-width:600px; margin:0 auto;">
+      <span class="section-label">Support the Fund</span>
+      <h2>Help Us <span class="blue">Keep It Going</span></h2>
+      <p style="color:var(--light); margin-bottom:2rem;">Your KVBA membership and donations directly fund this scholarship. Every dollar helps carry Bob Peters' legacy forward and invests in the next generation of blues musicians.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="membership.html" class="btn btn-primary">Become a Member</a>
+        <a href="https://checkout.square.site/merchant/CATDS6CR09XSK/checkout/AYVOXVUKCVJPOIWJMNQAFCZN" target="_blank" rel="noopener" class="btn btn-blue-outline">Make a Donation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive in Southwest Michigan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="preserve.html#schools">Blues in Schools</a></li>
+          <li><a href="scholarship.html">Bob Peters Scholarship</a></li>
+          <li><a href="events.html">Blues Festival</a></li>
+          <li><a href="golf.html">Golf Outing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:kvba@kvba.org">kvba@kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
