@@ -244,7 +244,7 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 .page-hero {
   padding: calc(var(--nav-h) + 4rem) 0 3.5rem;
   background: linear-gradient(to bottom, var(--bg-2), var(--bg));
-  border-bottom: 1px solid var(--border); text-align: center;
+  text-align: center;
 }
 .page-hero h1 { margin-bottom: 0.75rem; }
 .page-hero p  { color: var(--light); font-size: 1.05rem; max-width: 580px; margin: 0 auto; }
