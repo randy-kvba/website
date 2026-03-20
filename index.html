@@ -147,86 +147,10 @@
       <h2>Upcoming <span class="blue">Events</span></h2>
       <p>Blues jams, festivals, and live performances happening around Kalamazoo Valley.</p>
     </div>
-    <div class="events-grid reveal">
-
-      <!-- Spring Fling featured card -->
-      <button class="event-card" id="springFlingCard"
-              style="border-color:rgba(28,200,232,0.45); text-align:left; cursor:pointer; background:none; width:100%;">
-        <div style="min-width:82px; flex-shrink:0; overflow:hidden; align-self:stretch;">
-          <img src="assets/spring_fling_april2026.webp" alt="KVBA Spring Fling April 2026"
-               style="width:82px; height:100%; object-fit:cover; object-position:center top; display:block;" />
-        </div>
-        <div class="event-info" style="position:relative;">
-          <span style="position:absolute; top:0; right:0; background:#b44fc0; color:#fff;
-                       font-family:var(--heading); font-size:0.58rem; letter-spacing:0.18em;
-                       padding:0.18rem 0.55rem; border-radius:0 calc(var(--radius) - 1px) 0 4px;">🌸 SPRING FLING</span>
-          <h3>KVBA Spring Fling</h3>
-          <div class="event-meta">
-            <span class="time">⏱ April 2026</span>
-            <span style="font-size:0.8rem; color:var(--blue); margin-top:0.25rem; display:block;">Click to view poster →</span>
-          </div>
-        </div>
-      </button>
-
-      <!-- Golf Outing featured card -->
-      <a href="golf.html" class="event-card" style="border-color:rgba(28,200,232,0.45); text-decoration:none;">
-        <div style="min-width:82px; flex-shrink:0; overflow:hidden; align-self:stretch;">
-          <img src="Images/golf_outing_poster.jpg" alt="Birdies Bogeys & Blues poster"
-               style="width:82px; height:100%; object-fit:cover; object-position:center 10%; display:block;" />
-        </div>
-        <div class="event-info" style="position:relative;">
-          <span style="position:absolute; top:0; right:0; background:var(--blue); color:var(--bg);
-                       font-family:var(--heading); font-size:0.58rem; letter-spacing:0.18em;
-                       padding:0.18rem 0.55rem; border-radius:0 calc(var(--radius) - 1px) 0 4px;">⛳ GOLF OUTING</span>
-          <h3>Birdies, Bogeys &amp; Blues</h3>
-          <div class="event-meta">
-            <span class="time">⏱ Fri June 5 · 2:00 PM Shotgun</span>
-            <span class="venue">📍 Heritage Glen, Paw Paw</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="event-card">
-        <div class="event-date"><span class="day">17</span><span class="month">MAR</span></div>
-        <div class="event-info">
-          <h3>Out of Favor Boys</h3>
-          <div class="event-meta">
-            <span class="time">⏱ 5:00 PM</span>
-            <span class="venue">📍 Shakespeare's</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date"><span class="day">19</span><span class="month">MAR</span></div>
-        <div class="event-info">
-          <h3>Blues Jam w/ The Cats</h3>
-          <div class="event-meta">
-            <span class="time">⏱ 6–9 PM</span>
-            <span class="venue">📍 Shakespeare's Lower Level</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date"><span class="day">22</span><span class="month">MAR</span></div>
-        <div class="event-info">
-          <h3>Blues Jam w/ Jim Klein Band</h3>
-          <div class="event-meta">
-            <span class="time">⏱ 6:00 PM</span>
-            <span class="venue">📍 Old Dog Tavern</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date"><span class="day">26</span><span class="month">MAR</span></div>
-        <div class="event-info">
-          <h3>Blueback CD Release</h3>
-          <div class="event-meta">
-            <span class="time">⏱ 7:30 PM</span>
-            <span class="venue">📍 Crawlspace Theater</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Featured events (featured=yes in sheet) -->
+    <div class="events-grid reveal" id="homeFeatureGrid"></div>
+    <!-- Next 4 upcoming regular events -->
+    <div class="events-grid reveal" id="homeUpcomingGrid"></div>
     <div class="events-cta reveal">
       <a href="events.html" class="btn btn-blue-outline">View All Events &rarr;</a>
     </div>
@@ -389,7 +313,7 @@
   </div>
 </footer>
 
-<!-- ─── SPRING FLING POSTER MODAL ─────────────────────────────────────────────── -->
+<!-- ─── POSTER MODAL (generic — used by featured event cards) ─────────────────── -->
 <div id="posterModal" style="
   display:none; position:fixed; inset:0; z-index:9999;
   background:rgba(0,0,0,0.92); align-items:center; justify-content:center;
@@ -398,27 +322,139 @@
     position:absolute; top:1.25rem; right:1.5rem;
     background:none; border:none; color:#fff; font-size:2rem;
     cursor:pointer; line-height:1; z-index:1;">✕</button>
-  <img src="assets/spring_fling_april2026.webp" alt="KVBA Spring Fling 2026 poster"
+  <img id="posterImg" src="" alt="Event poster"
        style="max-width:90vw; max-height:90vh; object-fit:contain; border-radius:8px;
               box-shadow:0 8px 60px rgba(0,0,0,0.7);" />
 </div>
 
 <script src="assets/js/main.js"></script>
 <script>
-  // Spring Fling poster modal
-  const posterModal = document.getElementById('posterModal');
-  const posterClose = document.getElementById('posterClose');
-  document.getElementById('springFlingCard')?.addEventListener('click', () => {
-    posterModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-  function closePosterModal() {
-    posterModal.style.display = 'none';
-    document.body.style.overflow = '';
+// ── Poster modal ──────────────────────────────────────────────────────────────
+const posterModal = document.getElementById('posterModal');
+const posterImg   = document.getElementById('posterImg');
+const posterClose = document.getElementById('posterClose');
+
+function openPosterModal(src, alt) {
+  posterImg.src = src;
+  posterImg.alt = alt || 'Event poster';
+  posterModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closePosterModal() {
+  posterModal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+posterClose?.addEventListener('click', closePosterModal);
+posterModal?.addEventListener('click', e => { if (e.target === posterModal) closePosterModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePosterModal(); });
+
+// ── Home page events from Google Sheet ───────────────────────────────────────
+const HOME_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQMj2IMbEpP575TLdT7mFkyDUPZGsMGav7PcFES-xiCaYfnHS1BANDyGUspLSXSM3_AWpp3P0mLBHyT/pub?gid=0&single=true&output=csv';
+
+function escH(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function parseCSVLine(line) {
+  const r = []; let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { inQ = !inQ; }
+    else if (c === ',' && !inQ) { r.push(cur); cur = ''; }
+    else { cur += c; }
   }
-  posterClose?.addEventListener('click', closePosterModal);
-  posterModal?.addEventListener('click', e => { if (e.target === posterModal) closePosterModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePosterModal(); });
+  r.push(cur);
+  return r;
+}
+function parseSheet(text) {
+  const lines = text.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  const hdrs = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/"/g,''));
+  return lines.slice(1).map(line => {
+    const vals = parseCSVLine(line);
+    const obj = {};
+    hdrs.forEach((h, i) => obj[h] = (vals[i]||'').trim().replace(/^"|"$/g,''));
+    return obj;
+  }).filter(e => e.date && /^\d{4}-\d{2}-\d{2}$/.test(e.date));
+}
+
+function renderFeatured(events) {
+  const grid = document.getElementById('homeFeatureGrid');
+  if (!events.length) { grid.style.display = 'none'; return; }
+  grid.innerHTML = events.map(ev => {
+    const badge  = ev.badge || 'FEATURED';
+    const imgSrc = ev.image || '';
+    const url    = ev.url   || '';
+    const isModal = !url && imgSrc;
+    const imgHtml = imgSrc
+      ? `<div style="min-width:82px;flex-shrink:0;overflow:hidden;align-self:stretch;">
+           <img src="${escH(imgSrc)}" alt="${escH(ev.title)}"
+                style="width:82px;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+         </div>` : '';
+    const info = `
+      <div class="event-info" style="position:relative;">
+        <span style="position:absolute;top:0;right:0;background:var(--blue);color:var(--bg);
+                     font-family:var(--heading);font-size:0.58rem;letter-spacing:0.18em;
+                     padding:0.18rem 0.55rem;border-radius:0 calc(var(--radius) - 1px) 0 4px;">${escH(badge)}</span>
+        <h3>${escH(ev.title)}</h3>
+        <div class="event-meta">
+          ${ev.time  ? `<span class="time">&#9201; ${escH(ev.time)}</span>` : ''}
+          ${ev.venue ? `<span class="venue">&#128205; ${escH(ev.venue)}${ev.city ? ', '+escH(ev.city) : ''}</span>` : ''}
+          ${isModal  ? `<span style="font-size:0.8rem;color:var(--blue);margin-top:0.25rem;display:block;">Click to view poster &rarr;</span>` : ''}
+        </div>
+      </div>`;
+    const cardStyle = 'border-color:rgba(28,200,232,0.45);';
+    if (isModal) {
+      return `<button class="event-card" style="${cardStyle}text-align:left;cursor:pointer;background:none;width:100%;"
+                onclick="openPosterModal('${escH(imgSrc)}','${escH(ev.title)} poster')">${imgHtml}${info}</button>`;
+    } else if (url) {
+      const ext = url.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
+      return `<a href="${escH(url)}" class="event-card" style="${cardStyle}text-decoration:none;"${ext}>${imgHtml}${info}</a>`;
+    } else {
+      return `<div class="event-card" style="${cardStyle}">${imgHtml}${info}</div>`;
+    }
+  }).join('');
+}
+
+function renderUpcoming(events) {
+  const grid = document.getElementById('homeUpcomingGrid');
+  if (!events.length) { grid.style.display = 'none'; return; }
+  grid.style.marginTop = '1.5rem';
+  grid.innerHTML = events.map(ev => {
+    const d   = new Date(ev.date + 'T12:00:00');
+    const loc = [ev.venue, ev.city].filter(Boolean).join(', ');
+    return `
+      <div class="event-card">
+        <div class="event-date">
+          <span class="day">${d.getDate()}</span>
+          <span class="month">${d.toLocaleDateString('en-US',{month:'short'}).toUpperCase()}</span>
+        </div>
+        <div class="event-info">
+          <h3>${escH(ev.title)}</h3>
+          <div class="event-meta">
+            ${ev.time ? `<span class="time">&#9201; ${escH(ev.time)}</span>` : ''}
+            ${loc     ? `<span class="venue">&#128205; ${escH(loc)}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+async function loadHomeEvents() {
+  try {
+    const res  = await fetch(HOME_CSV);
+    if (!res.ok) throw new Error('unavailable');
+    const text = await res.text();
+    const today = new Date(); today.setHours(0,0,0,0);
+    const all = parseSheet(text)
+      .filter(ev => new Date(ev.date + 'T12:00:00') >= today)
+      .sort((a,b) => a.date.localeCompare(b.date));
+    renderFeatured(all.filter(ev => (ev.featured||'').toLowerCase() === 'yes'));
+    renderUpcoming(all.filter(ev => (ev.featured||'').toLowerCase() !== 'yes').slice(0,4));
+  } catch(e) {
+    console.warn('Home events load failed:', e);
+  }
+}
+loadHomeEvents();
 </script>
 </body>
 </html>
