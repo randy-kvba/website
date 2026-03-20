@@ -109,19 +109,21 @@ section    { padding: 4.5rem 0; }
 
 .dropdown {
   list-style: none;
-  position: absolute; top: calc(100% + 14px); left: 50%;
-  transform: translateX(-50%) translateY(-6px);
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(-4px);
   background: rgba(10,10,10,0.98); backdrop-filter: blur(16px);
   border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
-  padding: 0.45rem 0; min-width: 200px;
+  /* padding-top bridges the gap so the mouse never leaves the hover zone */
+  padding: 14px 0 0.45rem; min-width: 200px;
   opacity: 0; pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* delay the hide by 120ms so a slow mouse move doesn't snap it shut */
+  transition: opacity 0.2s ease 0.12s, transform 0.2s ease 0.12s;
   box-shadow: 0 10px 36px rgba(0,0,0,0.7);
   z-index: 1100;
 }
-/* small caret pointer */
+/* small caret pointer sits inside the padding-top gap */
 .dropdown::before {
-  content: ''; position: absolute; top: -6px; left: 50%;
+  content: ''; position: absolute; top: 8px; left: 50%;
   transform: translateX(-50%);
   border-left: 6px solid transparent; border-right: 6px solid transparent;
   border-bottom: 6px solid rgba(255,255,255,0.1);
@@ -129,6 +131,8 @@ section    { padding: 4.5rem 0; }
 .has-dropdown:hover .dropdown {
   opacity: 1; pointer-events: all;
   transform: translateX(-50%) translateY(0);
+  /* show immediately on hover-in, only delay the hide */
+  transition: opacity 0.18s ease 0s, transform 0.18s ease 0s;
 }
 .dropdown li a {
   display: block; padding: 0.55rem 1.3rem;
