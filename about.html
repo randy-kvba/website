@@ -13,14 +13,63 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
-    .memorial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
-    .memorial-card {
-      background: var(--bg-3); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem; text-align: center;
+    /* ── In Memoriam tributes ── */
+    .tribute {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
     }
-    .memorial-card .name { font-family: var(--heading); font-size: 1.2rem; margin-bottom: 0.3rem; }
-    .memorial-card .years { color: var(--blue); font-size: 0.82rem; letter-spacing: 0.1em; }
-    .memorial-card .note { color: var(--gray); font-size: 0.85rem; margin-top: 0.5rem; }
+    @media (max-width: 640px) {
+      .tribute { grid-template-columns: 1fr; }
+      .tribute-photo { text-align: center; }
+    }
+    .tribute-photo img {
+      width: 100%; max-width: 200px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .tribute-name {
+      font-family: var(--heading);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+    .tribute-role {
+      color: var(--blue);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .tribute-bio p {
+      color: var(--light);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+    .tribute-obit {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--blue);
+      font-size: 0.85rem;
+      text-decoration: underline;
+    }
+    .tribute-obit:hover { opacity: 0.8; }
+    /* Simpler card for those with a full page */
+    .memorial-card-sm {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem 2rem;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .memorial-card-sm .name { font-family: var(--heading); font-size: 1.4rem; margin-bottom: 0.2rem; }
+    .memorial-card-sm .note { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -169,19 +218,50 @@
       <h2>Those Who <span class="blue">Shaped Our Blues</span></h2>
       <p>We honor the musicians and community members who contributed so much to the Kalamazoo blues tradition. Their music lives on.</p>
     </div>
-    <div class="memorial-grid reveal">
-      <div class="memorial-card">
-        <div class="name">Boogie Woogie Bob Peters</div>
-        <div class="years">In Memoriam</div>
-        <div class="note">Beloved blues pianist and mentor. The scholarship bearing his name honors his legacy every year.</div>
+    <!-- Larry Bevins -->
+    <div class="tribute reveal">
+      <div class="tribute-photo">
+        <img src="https://kvba.org/wp-content/uploads/2023/11/BEVINS-LARRY-2-757x1024.png" alt="Larry Bevins" />
       </div>
-      <div class="memorial-card">
-        <div class="name">Beloved Community Member</div>
-        <div class="years">In Memoriam</div>
-        <div class="note">This page honors members of our blues family no longer with us. Contact KVBA to add a tribute.</div>
+      <div class="tribute-content">
+        <div class="tribute-name">Larry Bevins</div>
+        <span class="tribute-role">KVBA President &amp; Festival Visionary</span>
+        <div class="tribute-bio">
+          <p>About 30 years ago the newly formed Kalamazoo Valley Blues Association decided to have a blues festival in downtown Kalamazoo. The weather was not kind and the event lost money. Those that planned it were discouraged. Could they have another one when they hadn't paid all the bills on the first one? Someone stepped up with a plan. That person was Larry Bevins.</p>
+          <p>Larry's plan included recruiting sponsors, holding a series of fundraisers, and negotiating with those owed money. Another festival was planned. Larry, who was not part of the Board at the time, was elected the new President to lead this effort (1996).</p>
+          <p>Not only did the plan work, in 2001 Larry traveled to Memphis to accept the Blues Organization of the Year award! The Kalamazoo Chamber of Commerce made July Blues month. Larry, and his volunteer Board, had put Kalamazoo on the blues map! A book was published in 1999 called "Blues For Dummies." The authors were mostly Chicago based. A list was given of the top 10 blues festivals not to miss — among them was the Kalamazoo Blues Festival.</p>
+          <p>It was always Larry's vision to get national recognition. He got it! For those now doing the booking, the major agencies are on speed dial. That's all because of Larry Bevins who refused to let it die and dreamed of something bigger.</p>
+          <p>But blues wasn't his only love. The man could barbeque some ribs! He actually entered an annual rib competition with a few other KVBA members and took 2nd place at RibFest. Music, BBQ, and family is what Larry was all about. He will be greatly missed in the blues world and beyond. Here at KVBA we celebrate the life and impact of Larry and send our sincere condolences to Lorie and Katie.</p>
+        </div>
+        <a href="https://www.winkelfuneralhome.com/larry-d-bevins/" target="_blank" rel="noopener" class="tribute-obit">Read Larry's obituary &rarr;</a>
       </div>
     </div>
-    <p style="text-align:center; color:var(--gray); margin-top:2rem; font-size:0.9rem;">
+
+    <!-- John Steele -->
+    <div class="tribute reveal">
+      <div class="tribute-photo">
+        <img src="https://kvba.org/wp-content/uploads/2022/01/John-Steele-200x300.jpg" alt="John Steele" />
+      </div>
+      <div class="tribute-content">
+        <div class="tribute-name">John Steele</div>
+        <span class="tribute-role">KVBA Board Member &amp; Treasurer</span>
+        <div class="tribute-bio">
+          <p>Remembering our dear friend John Steele, who passed in November 2021. His legacy includes many contributions to the local blues scene. John served as board member and treasurer to the KVBA, and his dedication helped sustain the organization through many years of growth.</p>
+          <p>RIP John.</p>
+        </div>
+        <a href="https://obits.mlive.com/us/obituaries/kalamazoo/name/john-steele-obituary?id=31671112" target="_blank" rel="noopener" class="tribute-obit">Read John's obituary &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Boogie Woogie Bob Peters -->
+    <div class="memorial-card-sm reveal">
+      <div>
+        <div class="name">Boogie Woogie Bob Peters</div>
+        <div class="note">Beloved blues pianist, mentor, and the heart of KVBA's education mission. The scholarship bearing his name honors a Southwest Michigan student musician every year. <a href="scholarship.html" style="color:var(--blue);">Learn about the scholarship &rarr;</a></div>
+      </div>
+    </div>
+
+    <p style="text-align:center; color:var(--gray); margin-top:2.5rem; font-size:0.9rem;">
       To add a tribute to a musician or community member, please <a href="mailto:info@kvba.org?subject=In Memoriam" style="color:var(--blue);">contact us</a>.
     </p>
   </div>
