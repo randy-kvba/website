@@ -62,6 +62,18 @@
       text-decoration: underline;
     }
     .tribute-obit:hover { opacity: 0.8; }
+    /* ── Collapsible bio ── */
+    .bio-preview { margin-bottom: 0; }
+    .bio-full { display: none; }
+    .bio-full.open { display: block; }
+    .bio-toggle {
+      background: none; border: none; cursor: pointer;
+      color: var(--blue); font-size: 0.85rem; padding: 0.5rem 0 0;
+      letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .bio-toggle:hover { opacity: 0.8; }
+    .bio-toggle .arrow { display: inline-block; transition: transform 0.25s; }
+    .bio-toggle.open .arrow { transform: rotate(90deg); }
     /* Simpler card for those with a full page */
     .memorial-card-sm {
       background: var(--bg-3); border: 1px solid var(--border);
@@ -227,11 +239,18 @@
         <div class="tribute-name">Larry Bevins</div>
         <span class="tribute-role">KVBA President &amp; Festival Visionary</span>
         <div class="tribute-bio">
-          <p>About 30 years ago the newly formed Kalamazoo Valley Blues Association decided to have a blues festival in downtown Kalamazoo. The weather was not kind and the event lost money. Those that planned it were discouraged. Could they have another one when they hadn't paid all the bills on the first one? Someone stepped up with a plan. That person was Larry Bevins.</p>
-          <p>Larry's plan included recruiting sponsors, holding a series of fundraisers, and negotiating with those owed money. Another festival was planned. Larry, who was not part of the Board at the time, was elected the new President to lead this effort (1996).</p>
-          <p>Not only did the plan work, in 2001 Larry traveled to Memphis to accept the Blues Organization of the Year award! The Kalamazoo Chamber of Commerce made July Blues month. Larry, and his volunteer Board, had put Kalamazoo on the blues map! A book was published in 1999 called "Blues For Dummies." The authors were mostly Chicago based. A list was given of the top 10 blues festivals not to miss — among them was the Kalamazoo Blues Festival.</p>
-          <p>It was always Larry's vision to get national recognition. He got it! For those now doing the booking, the major agencies are on speed dial. That's all because of Larry Bevins who refused to let it die and dreamed of something bigger.</p>
-          <p>But blues wasn't his only love. The man could barbeque some ribs! He actually entered an annual rib competition with a few other KVBA members and took 2nd place at RibFest. Music, BBQ, and family is what Larry was all about. He will be greatly missed in the blues world and beyond. Here at KVBA we celebrate the life and impact of Larry and send our sincere condolences to Lorie and Katie.</p>
+          <div class="bio-preview">
+            <p>About 30 years ago the newly formed Kalamazoo Valley Blues Association decided to have a blues festival in downtown Kalamazoo. The weather was not kind and the event lost money — but someone stepped up with a plan. That person was Larry Bevins.</p>
+          </div>
+          <div class="bio-full" id="larryBio">
+            <p>Larry's plan included recruiting sponsors, holding a series of fundraisers, and negotiating with those owed money. Another festival was planned. Larry, who was not part of the Board at the time, was elected the new President to lead this effort (1996).</p>
+            <p>Not only did the plan work, in 2001 Larry traveled to Memphis to accept the Blues Organization of the Year award! The Kalamazoo Chamber of Commerce made July Blues month. Larry, and his volunteer Board, had put Kalamazoo on the blues map! A book was published in 1999 called "Blues For Dummies" with a list of the top 10 blues festivals not to miss — among them was the Kalamazoo Blues Festival.</p>
+            <p>It was always Larry's vision to get national recognition. He got it! For those now doing the booking, the major agencies are on speed dial. That's all because of Larry Bevins who refused to let it die and dreamed of something bigger.</p>
+            <p>But blues wasn't his only love. The man could barbeque some ribs! He entered an annual rib competition with a few other KVBA members and took 2nd place at RibFest. Music, BBQ, and family is what Larry was all about. He will be greatly missed in the blues world and beyond. Here at KVBA we celebrate the life and impact of Larry and send our sincere condolences to Lorie and Katie.</p>
+          </div>
+          <button class="bio-toggle" id="larryToggle" onclick="toggleBio('larryBio','larryToggle')">
+            <span class="arrow">&#9654;</span> Read more
+          </button>
         </div>
         <a href="https://www.winkelfuneralhome.com/larry-d-bevins/" target="_blank" rel="noopener" class="tribute-obit">Read Larry's obituary &rarr;</a>
       </div>
@@ -250,6 +269,31 @@
           <p>RIP John.</p>
         </div>
         <a href="https://obits.mlive.com/us/obituaries/kalamazoo/name/john-steele-obituary?id=31671112" target="_blank" rel="noopener" class="tribute-obit">Read John's obituary &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Millie Lambert -->
+    <div class="tribute reveal">
+      <div class="tribute-photo">
+        <img src="https://kvba.org/wp-content/uploads/2024/09/millie-lambert.jpg" alt="Millie Lambert"
+             onerror="this.closest('.tribute-photo').style.display='none'" />
+      </div>
+      <div class="tribute-content">
+        <div class="tribute-name">Millie Lambert</div>
+        <span class="tribute-role">KVBA Board Member &amp; Beloved Community Pillar</span>
+        <div class="tribute-bio">
+          <div class="bio-preview">
+            <p>Mildred "Millie" Mary Lambert, born February 5, 1949, passed away peacefully on August 27, 2024, at the age of 75. A Kalamazoo treasure through and through, Millie served on the KVBA board and gave herself fully to the blues community she loved.</p>
+          </div>
+          <div class="bio-full" id="millieBio">
+            <p>Millie spent her career as an elementary teacher in Kalamazoo Public Schools and brought that same warmth and dedication to everything she did for KVBA. Her love of live music — especially the Out of Favor Boys — and her easy laugh made her a fixture at events and a friend to everyone she met.</p>
+            <p>She is survived by her sister Ann Walker; niece Mari Bryant; niece Lindsay (John) Osborn; and great-nieces and nephews Cadence, Gabriella, Owen, and Isaac Osborn. Her spirit lives on in the music she championed and the people she brought together. She will be greatly missed.</p>
+          </div>
+          <button class="bio-toggle" id="millieToggle" onclick="toggleBio('millieBio','millieToggle')">
+            <span class="arrow">&#9654;</span> Read more
+          </button>
+        </div>
+        <a href="https://obits.mlive.com/us/obituaries/kalamazoo/name/mildred-lambert-obituary?id=56296379" target="_blank" rel="noopener" class="tribute-obit">Read Millie's obituary &rarr;</a>
       </div>
     </div>
 
@@ -319,5 +363,14 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script>
+function toggleBio(bioId, toggleId) {
+  const bio    = document.getElementById(bioId);
+  const toggle = document.getElementById(toggleId);
+  const open   = bio.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.innerHTML = `<span class="arrow">&#9654;</span> ${open ? 'Read less' : 'Read more'}`;
+}
+</script>
 </body>
 </html>
