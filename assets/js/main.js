@@ -52,6 +52,9 @@ if (heroSlides.length > 1) {
   heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => { stopHeroTimer(); goToHeroSlide(i); startHeroTimer(); });
   });
+  // Prev / Next arrow buttons
+  document.getElementById('heroPrev')?.addEventListener('click', () => { stopHeroTimer(); goToHeroSlide(heroIdx - 1); startHeroTimer(); });
+  document.getElementById('heroNext')?.addEventListener('click', () => { stopHeroTimer(); goToHeroSlide(heroIdx + 1); startHeroTimer(); });
 }
 
 // ─── ACTIVE NAV LINK ───────────────────────────────────────────────
