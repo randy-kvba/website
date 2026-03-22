@@ -591,6 +591,61 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
   color: var(--white);
 }
 
+/* ─── MAILTO COPY HELPER ─────────────────────────────────────────────── */
+/* Wraps inline mailto links so the address + copy button sit inline     */
+.mailto-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  flex-wrap: wrap;
+}
+/* Small italic hint showing the email address when the link label isn't one */
+.mailto-hint {
+  font-size: 0.88em;
+  font-style: italic;
+  opacity: 0.7;
+}
+/* Tiny clipboard icon button */
+.mailto-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 2px 4px;
+  color: inherit;
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.2s, border-color 0.2s, color 0.2s;
+  vertical-align: middle;
+  line-height: 0;
+  font-family: var(--body);
+}
+.mailto-copy:hover          { opacity: 1; border-color: currentColor; }
+.mailto-copy.copied         { color: #22c55e; opacity: 1; border-color: #22c55e; }
+/* "or email: …" bar shown below button-style mailto links */
+.mailto-btn-bar {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
+  /* When inside a flex row (e.g., button group), break to its own centred row */
+  flex-basis: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.mailto-btn-bar .mailto-address {
+  font-style: italic;
+}
+/* In light sections, keep colors on-theme */
+.section-light .mailto-copy         { color: var(--white); }
+.section-light .mailto-copy:hover   { border-color: var(--white); }
+.section-light .mailto-btn-bar      { color: var(--gray); }
+
 /* ─── UTILITIES ─────────────────────────────────────────────── */
 .text-center   { text-align: center; }
 .mt-2 { margin-top: 2rem; }

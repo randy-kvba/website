@@ -189,3 +189,75 @@ if (reveals.length) {
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 }
+
+// ─── MAILTO COPY HELPER ───────────────────────────────────────────────────────
+// Many users (especially on desktop Macs) don't have a default mail app set up,
+// so mailto: links silently fail.  This enhancer:
+//   • Shows the email address as visible text when the link label isn't already an address
+//   • Appends a small copy-to-clipboard button to every non-button mailto link
+//   • Adds an "or email: address [copy]" line below button-style mailto links
+(function () {
+  const COPY_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const CHECK_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  function doCopy(btn, email) {
+    const finish = () => {
+      btn.innerHTML = CHECK_SVG;
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = COPY_SVG; btn.classList.remove('copied'); }, 2200);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(finish).catch(() => legacyCopy(btn, email, finish));
+    } else {
+      legacyCopy(btn, email, finish);
+    }
+  }
+
+  function legacyCopy(btn, email, finish) {
+    const ta = document.createElement('textarea');
+    ta.value = email; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); finish(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  function makeCopyBtn(email) {
+    const btn = document.createElement('button');
+    btn.className = 'mailto-copy';
+    btn.title = 'Copy email address';
+    btn.setAttribute('aria-label', 'Copy ' + email + ' to clipboard');
+    btn.innerHTML = COPY_SVG;
+    btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); doCopy(btn, email); });
+    return btn;
+  }
+
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    const email = link.getAttribute('href').replace(/^mailto:/i, '').split('?')[0];
+    const labelIsEmail = link.textContent.trim().toLowerCase() === email.toLowerCase();
+    const isBtn = link.classList.contains('btn');
+
+    if (isBtn) {
+      // For button-style links, add a small "or email: …" line beneath the button
+      const bar = document.createElement('p');
+      bar.className = 'mailto-btn-bar';
+      bar.innerHTML = 'or email: <span class="mailto-address">' + email + '</span>';
+      bar.appendChild(makeCopyBtn(email));
+      // Insert after the button (account for the button possibly being inside a wrapper)
+      link.insertAdjacentElement('afterend', bar);
+    } else {
+      // Inline / footer links: wrap in a span, optionally show hint, add copy button
+      const wrap = document.createElement('span');
+      wrap.className = 'mailto-wrap';
+      link.parentNode.insertBefore(wrap, link);
+      wrap.appendChild(link);
+      if (!labelIsEmail) {
+        const hint = document.createElement('span');
+        hint.className = 'mailto-hint';
+        hint.textContent = email;
+        hint.setAttribute('aria-hidden', 'true');
+        wrap.appendChild(hint);
+      }
+      wrap.appendChild(makeCopyBtn(email));
+    }
+  });
+}());
