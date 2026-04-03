@@ -13,8 +13,10 @@
     .fest-hero {
       padding: calc(var(--nav-h) + 5rem) 2rem 5rem;
       text-align: center;
-      background: radial-gradient(ellipse at 50% 30%, rgba(8,145,178,0.18) 0%, transparent 65%), var(--bg);
-      min-height: 72vh;
+      background:
+        linear-gradient(to bottom, rgba(8,8,8,0.55) 0%, rgba(8,8,8,0.4) 50%, rgba(8,8,8,0.72) 100%),
+        url('assets/images/622866035_1333232205512903_3604724497939376705_n.jpg') center center / cover no-repeat;
+      min-height: 82vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
     .fest-badge {
@@ -27,7 +29,7 @@
     .fest-title {
       font-family: var(--heading); font-size: clamp(4rem, 10vw, 9rem);
       line-height: 0.95; color: var(--white);
-      text-shadow: 0 2px 40px rgba(8,145,178,0.35);
+      text-shadow: 0 2px 40px rgba(0,0,0,0.6);
       margin: 0 0 0.3em;
     }
     .fest-year {
@@ -37,11 +39,11 @@
     }
     .fest-dates {
       font-family: var(--heading); font-size: clamp(1.8rem, 4vw, 3rem);
-      color: var(--light); letter-spacing: 0.12em;
+      color: var(--white); letter-spacing: 0.12em;
       margin-bottom: 2rem;
     }
     .fest-tagline {
-      font-size: 1.2rem; color: rgba(255,255,255,0.6);
+      font-size: 1.15rem; color: rgba(255,255,255,0.85);
       max-width: 560px; line-height: 1.7; margin-bottom: 3rem;
     }
     .fest-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
@@ -50,22 +52,30 @@
       background: var(--blue); border-radius: 2px;
       margin: 0 auto 3rem;
     }
+    /* ── Light info section ── */
+    .fest-light-section {
+      background: linear-gradient(180deg, #e8e2d8 0%, #d6cfC5 100%);
+      padding: 5rem 2rem;
+    }
     .fest-info {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-      padding: 2.5rem 3rem; max-width: 680px; margin: 0 auto 5rem;
+      background: #fff; border-radius: 14px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      padding: 2.5rem 3rem; max-width: 720px; margin: 0 auto;
       text-align: left;
     }
     .fest-info h3 {
-      font-family: var(--heading); font-size: 1.6rem; letter-spacing: 0.1em;
-      color: var(--blue); margin-bottom: 1rem;
+      font-family: var(--heading); font-size: 1.8rem; letter-spacing: 0.1em;
+      color: #1a1a1a; margin-bottom: 1rem;
     }
-    .fest-info p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 0.75rem; }
+    .fest-info p { color: #444; line-height: 1.8; margin-bottom: 0.75rem; }
     .fest-info p:last-child { margin-bottom: 0; }
+    .fest-info a { color: #0891b2; }
+    /* ── Blinking pill ── */
     .fest-soon {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.3);
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4);
       border-radius: 50px; padding: 0.45rem 1.1rem;
-      font-size: 0.97rem; color: var(--blue); letter-spacing: 0.08em;
+      font-size: 0.97rem; color: #fff; letter-spacing: 0.08em;
       margin-bottom: 2rem;
     }
     .fest-soon::before { content: '●'; font-size: 0.5em; animation: blink 1.4s ease-in-out infinite; }
@@ -150,7 +160,7 @@
 </section>
 
 <!-- ─── INFO CARD ─────────────────────────────────────────────── -->
-<section style="padding: 0 2rem 6rem; background: var(--bg);">
+<section class="fest-light-section">
   <div class="fest-info">
     <h3>Stay in the Loop</h3>
     <p>Blues Fest 2026 is coming to <a href="https://www.facebook.com/p/Old-Dog-Tavern-61581095594378/" target="_blank" rel="noopener" style="color:var(--blue);">Old Dog Tavern</a> in Kalamazoo, MI — and it's shaping up to be our biggest event yet. Check back soon for the announcement of the exciting lineup, or become a KVBA member to get updates delivered straight to your inbox.</p>
