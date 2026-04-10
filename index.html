@@ -415,6 +415,14 @@ const HOME_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOcldWiM1e3A2
 function escH(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+function safeUrl(url) {
+  try {
+    const u = new URL(url);
+    return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '';
+  } catch (e) {
+    return url && !url.includes(':') ? url : '';
+  }
+}
 function parseCSVLine(line) {
   const r = []; let cur = '', inQ = false;
   for (let i = 0; i < line.length; i++) {
@@ -444,7 +452,7 @@ function renderFeatured(events) {
   grid.innerHTML = events.map(ev => {
     const badge  = ev.badge || 'FEATURED';
     const imgSrc = ev.image || '';
-    const url    = ev.url   || '';
+    const url    = safeUrl(ev.url || '');
     const isModal = !url && imgSrc;
     const imgHtml = imgSrc
       ? `<div style="min-width:82px;flex-shrink:0;overflow:hidden;align-self:stretch;">

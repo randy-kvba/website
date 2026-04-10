@@ -214,6 +214,17 @@ function escHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+// Only allow http/https URLs — blocks javascript: and data: injection
+function safeUrl(url) {
+  try {
+    const u = new URL(url);
+    return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '';
+  } catch (e) {
+    // Relative URLs (e.g. golf.html) are fine
+    return url && !url.includes(':') ? url : '';
+  }
+}
+
 // Parse a CSV line respecting quoted fields
 function parseCSVLine(line) {
   const result = [];
@@ -281,7 +292,7 @@ function renderEvents(events) {
       const venue   = ev.venue || '';
       const city    = ev.city  || '';
       const loc     = venue + (venue && city ? ', ' : '') + city;
-      const linkO   = ev.url ? `<a href="${escHtml(ev.url)}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">` : '';
+      const linkO   = safeUrl(ev.url) ? `<a href="${escHtml(safeUrl(ev.url))}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">` : '';
       const linkC   = ev.url ? '</a>' : '';
       html += `
         <div class="event-card-lg">
