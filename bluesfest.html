@@ -84,6 +84,66 @@
       .fest-info { padding: 1.75rem 1.5rem; }
     }
 
+    /* ── Lineup announced pill ── */
+    .lineup-announced {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: rgba(28,200,232,0.18);
+      border: 1px solid rgba(28,200,232,0.6);
+      border-radius: 50px; padding: 0.5rem 1.25rem;
+      font-family: var(--heading); font-size: 1rem;
+      letter-spacing: 0.18em; color: var(--blue);
+      margin-bottom: 1.5rem;
+      animation: pulse-border 2.4s ease-in-out infinite;
+    }
+    .lineup-announced::before {
+      content: '●'; font-size: 0.5em;
+      animation: blink 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse-border {
+      0%,100% { box-shadow: 0 0 0 0 rgba(28,200,232,0); }
+      50%      { box-shadow: 0 0 12px 3px rgba(28,200,232,0.25); }
+    }
+
+    /* ── Venue spotlight ── */
+    .venue-spotlight {
+      background: #0d1a1e;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(28,200,232,0.15);
+      border-bottom: 1px solid rgba(28,200,232,0.15);
+    }
+    .venue-spotlight .venue-label {
+      font-family: var(--heading); font-size: 0.85rem;
+      letter-spacing: 0.22em; color: var(--blue);
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .venue-spotlight img {
+      width: 160px; height: auto;
+      filter: invert(1) brightness(1);
+      opacity: 0.92;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+    .venue-spotlight .venue-name {
+      font-family: var(--heading); font-size: 2rem;
+      letter-spacing: 0.1em; color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .venue-spotlight .venue-address {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.92rem; letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .venue-spotlight a.venue-link {
+      display: inline-block;
+      color: var(--blue); font-size: 0.85rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid rgba(28,200,232,0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .venue-spotlight a.venue-link:hover { border-bottom-color: var(--blue); }
+
     /* ── Band links ── */
     .sched-band a {
       color: inherit;
@@ -308,15 +368,15 @@
 
 <!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section class="fest-hero">
+  <span class="lineup-announced">🎵 Lineup Announced</span>
   <p class="fest-badge">🎸 KVBA Presents</p>
   <h1 class="fest-title">Blues<br>Fest</h1>
   <p class="fest-year">2026</p>
   <div class="fest-divider"></div>
-  <p style="font-family:var(--heading);font-size:clamp(1rem,2.5vw,1.4rem);letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:0.4rem;">July 10 &amp; 11 · Old Dog Tavern</p>
-  <p class="fest-dates">Kalamazoo, MI</p>
-  <p class="fest-tagline">Two nights of world-class blues. Headlined by <strong style="color:var(--white);">JR Clark</strong> on Friday and <strong style="color:var(--white);">Carolyn Wonderland</strong> on Saturday.</p>
+  <p style="font-family:var(--heading);font-size:clamp(1rem,2.5vw,1.4rem);letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:0.4rem;">July 10 &amp; 11 · Old Dog Tavern · Kalamazoo, MI</p>
+  <p class="fest-tagline" style="margin-top:1rem;">Two nights of world-class blues. Headlined by <strong style="color:var(--white);">JR Clark</strong> on Friday and <strong style="color:var(--white);">Carolyn Wonderland</strong> on Saturday — plus 9 more incredible acts.</p>
   <div class="fest-cta-group">
-    <a href="#schedule" class="btn btn-primary">View Schedule ↓</a>
+    <a href="#schedule" class="btn btn-primary">View Full Lineup ↓</a>
     <a href="membership.html" class="btn btn-outline">Join KVBA</a>
   </div>
 </section>
@@ -424,6 +484,15 @@ function switchDay(day) {
   document.getElementById('tab-' + day).classList.add('active');
 }
 </script>
+
+<!-- ─── VENUE SPOTLIGHT ───────────────────────────────────────── -->
+<section class="venue-spotlight">
+  <div class="venue-label">Presented at</div>
+  <img src="assets/images/old-dog-tavern-logo.png" alt="Old Dog Tavern" />
+  <div class="venue-name">Old Dog Tavern</div>
+  <div class="venue-address">57 E. Crosstown Pkwy · Kalamazoo, MI 49001</div>
+  <a href="https://www.facebook.com/p/Old-Dog-Tavern-61581095594378/" target="_blank" rel="noopener" class="venue-link">Visit Old Dog Tavern →</a>
+</section>
 
 <!-- ─── INFO CARD ─────────────────────────────────────────────── -->
 <section class="fest-light-section">
